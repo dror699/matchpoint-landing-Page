@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,101 +11,116 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: #000;
-            color: #ffcc00;
-        }
-        .logo {
-            margin-top: 20px;
-            font-size: 32px;
-            font-weight: bold;
+            background: black;
             color: #ffcc00;
         }
         .container {
-            width: 50%;
+            width: 40%;
             margin: 50px auto;
             padding: 30px;
             background: #222;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
         }
-        h2 {
-            color: #ffcc00;
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
         }
-        .role-selection {
+        .register-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 20px;
         }
-        .role-card {
+        .register-btn {
             background: #333;
+            color: #ffcc00;
             padding: 20px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
             border-radius: 10px;
             cursor: pointer;
             transition: background 0.3s ease;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        .role-card:hover {
-            background: #ffcc00;
-            color: black;
+        .register-btn i {
+            font-size: 20px;
         }
-        .role-card i {
-            font-size: 40px;
-            margin-bottom: 10px;
+        .register-btn:hover {
+            background: #444;
         }
         .footer {
             margin-top: 50px;
             background: black;
             color: #ffcc00;
             padding: 20px;
+            text-align: center;
         }
         .social-icons {
             margin-top: 10px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
         }
         .social-icons a {
             color: #ffcc00;
             font-size: 24px;
-        }
-        .social-icons a:hover {
-            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="logo">MatchPoint</div>
-    
+    <h1>MatchPoint</h1>
     <div class="container">
         <h2>Register as</h2>
-        <div class="role-selection">
-            <div class="role-card" onclick="location.href='register_agent.html'">
-                <i class="fa-solid fa-user-tie"></i>
-                <h3>Agent</h3>
-            </div>
-            <div class="role-card" onclick="location.href='register_player.html'">
-                <i class="fa-solid fa-futbol"></i>
-                <h3>Player</h3>
-            </div>
-            <div class="role-card" onclick="location.href='register_club.html'">
-                <i class="fa-solid fa-shield"></i>
-                <h3>Club</h3>
-            </div>
-            <div class="role-card" onclick="location.href='register_coach.html'">
-                <i class="fa-solid fa-chalkboard-teacher"></i>
-                <h3>Coach / Scout</h3>
-            </div>
+        <div class="register-options">
+            <button onclick="window.location.href='agent_registration.html'" class="register-btn">
+                <i class="fas fa-user-tie"></i> Agent
+            </button>
+            <button onclick="window.location.href='player_registration.html'" class="register-btn">
+                <i class="fas fa-futbol"></i> Player
+            </button>
+            <button onclick="window.location.href='club_registration.html'" class="register-btn">
+                <i class="fas fa-shield-alt"></i> Club
+            </button>
+            <button onclick="window.location.href='coach_registration.html'" class="register-btn">
+                <i class="fas fa-chalkboard-teacher"></i> Coach / Scout
+            </button>
         </div>
     </div>
     
     <footer class="footer">
         <p>&copy; 2025 MatchPoint | All Rights Reserved</p>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
     </footer>
+    
+    <script>
+        // Redirect Join Now & Get Started to Registration Page
+        document.addEventListener("DOMContentLoaded", function() {
+            let joinNow = document.querySelector(".cta");
+            let getStarted = document.querySelector(".get-started");
+            
+            if (joinNow) {
+                joinNow.addEventListener("click", function() {
+                    window.location.href = "registration.html";
+                });
+            }
+            
+            if (getStarted) {
+                getStarted.addEventListener("click", function() {
+                    window.location.href = "registration.html";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
